@@ -71,7 +71,22 @@
 						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 					</jvmArguments>
 				</configuration>
-
+			</plugin>
+			<plugin>
+				<groupId>uk.co.codezen</groupId>
+				<artifactId>react-jsxtransformer-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<sourcePath>${basedir}/src/main/resources/jsx</sourcePath>
+					<targetPath>${project.build.directory}/classes/static</targetPath>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
